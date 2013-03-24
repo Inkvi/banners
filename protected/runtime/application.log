@@ -1,0 +1,970 @@
+2013/03/22 19:14:04 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/Users/inkvimac/dev/projects/banners/protected/views/layouts/main.php:51)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#2 /Users/inkvimac/dev/projects/banners/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(206): CContentDecorator->run()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(300): SiteController->endWidget()
+#6 /Users/inkvimac/dev/projects/banners/protected/views/layouts/column1.php(6): SiteController->endContent()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(784): SiteController->renderFile()
+#10 /Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php(32): SiteController->render()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(286): SiteController->runAction()
+#14 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /Users/inkvimac/dev/projects/banners/index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in /Users/inkvimac/dev/projects/banners/protected/views/layouts/main.php (51)
+in /Users/inkvimac/dev/projects/banners/protected/views/layouts/column1.php (6)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php (32)
+2013/03/23 20:56:27 [error] [exception.CDbException] exception 'CDbException' with message 'The table "{{user}}" for active record class "User" cannot be found in the database.' in /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php:2310
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(387): CActiveRecordMetaData->__construct(Object(User))
+#1 /Users/inkvimac/dev/projects/banners/protected/models/User.php(20): CActiveRecord::model('User')
+#2 /Users/inkvimac/dev/projects/banners/protected/components/UserIdentity.php(18): User::model()
+#3 /Users/inkvimac/dev/projects/banners/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#4 /Users/inkvimac/dev/projects/banners/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#5 /Users/inkvimac/dev/projects/banners/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#6 /Users/inkvimac/dev/projects/banners/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#7 /Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php(94): CModel->validate()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('login')
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://localhost:8081/index.php?r=site/login
+---
+2013/03/23 21:04:57 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:336
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('view')
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/view')
+#10 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#11 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#12 {main}
+REQUEST_URI=/index.php?r=banner/view
+---
+2013/03/23 22:13:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('page')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://localhost:8081/?STORM=1
+---
+2013/03/23 22:13:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "page".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('page')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('page')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/page&view=about
+HTTP_REFERER=http://localhost:8081/index.php?r=site/index
+---
+2013/03/23 22:14:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "contact".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('contact')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('contact')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/contact
+HTTP_REFERER=http://localhost:8081/index.php?r=site/page&view=about
+---
+2013/03/23 22:19:40 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/admin')
+#9 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=banner/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/index
+---
+2013/03/23 23:47:30 [warning] [application] Failed to set unsafe attribute "path" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/23 23:51:32 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/23 23:51:32 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 banner.image may not be NULL. The SQL statement executed was: INSERT INTO 'banner' ("weight", "views", "title", "created") VALUES (:yp0, :yp1, :yp2, :yp3).
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (75)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/23 23:51:32 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 19 banner.image may not be NULL. The SQL statement executed was: INSERT INTO 'banner' ("weight", "views", "title", "created") VALUES (:yp0, :yp1, :yp2, :yp3)' in /Users/inkvimac/dev/projects/banners/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(75): CActiveRecord->save()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionCreate()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/create')
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=banner/create
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/create
+---
+2013/03/23 23:54:31 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/23 23:55:44 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (101)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/23 23:59:44 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/23 23:59:44 [error] [php] move_uploaded_file(/Users/inkvimac/dev/projects/banners/protected/../banner/6532-alex_before.jpg): failed to open stream: No such file or directory (/Users/inkvimac/dev/projects/banners/framework/web/CUploadedFile.php:196)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionCreate()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#12 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/create
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (81)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:00:05 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:00:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 column title is not unique. The SQL statement executed was: INSERT INTO 'banner' ("weight", "views", "title", "image", "created") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (79)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:00:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 19 column title is not unique. The SQL statement executed was: INSERT INTO 'banner' ("weight", "views", "title", "image", "created") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in /Users/inkvimac/dev/projects/banners/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(79): CActiveRecord->save()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionCreate()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/create')
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=banner/create
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/create
+---
+2013/03/24 00:00:49 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:07:03 [error] [exception.CException] exception 'CException' with message 'Property "Banner.path" is not defined.' in /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(143): CComponent->__get('path')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('path')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Banner), 'path')
+#3 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Banner), 'path', Array)
+#4 /Users/inkvimac/dev/projects/banners/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Banner), 'path', Array)
+#5 /Users/inkvimac/dev/projects/banners/protected/views/banner/_search.php(21): CActiveForm->textField(Object(Banner), 'path', Array)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#9 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(40): CController->renderPartial('_search', Array)
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(152): CController->render('admin', Array)
+#15 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#23 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/admin')
+#26 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/index.php?r=banner/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/view&id=2
+---
+2013/03/24 00:07:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php:166
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(55): BannerController->loadModel('2')
+#1 [internal function]: BannerController->actionView('2')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(BannerController), Array)
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(BannerController), Object(ReflectionMethod), Array)
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('view')
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/view')
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=banner/view&id=2
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/index
+---
+2013/03/24 00:07:43 [error] [exception.CException] exception 'CException' with message 'Property "Banner.path" is not defined.' in /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(143): CComponent->__get('path')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(2255): CActiveRecord->__get('path')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1980): CHtml::resolveValue(Object(Banner), 'path')
+#3 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1257): CHtml::activeInputField('text', Object(Banner), 'path', Array)
+#4 /Users/inkvimac/dev/projects/banners/framework/web/widgets/CActiveForm.php(657): CHtml::activeTextField(Object(Banner), 'path', Array)
+#5 /Users/inkvimac/dev/projects/banners/protected/views/banner/_search.php(21): CActiveForm->textField(Object(Banner), 'path', Array)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#9 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(40): CController->renderPartial('_search', Array)
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#14 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(152): CController->render('admin', Array)
+#15 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#17 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#18 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#20 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#21 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#22 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#23 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#24 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#25 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/admin')
+#26 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/index.php?r=banner/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/view&id=1
+---
+2013/03/24 00:12:48 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (106)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:21:42 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:21:46 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:22:34 [error] [exception.CException] exception 'CException' with message 'Property "CDataColumn.label" is not defined.' in /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php:173
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/YiiBase.php(220): CComponent->__set('label', 'Image')
+#1 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(334): CGridView->initColumns()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(147): CGridView->init()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(59): CBaseController->widget('zii.widgets.gri...', Array)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#10 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): CController->render('admin', Array)
+#11 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#21 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/admin')
+#22 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#24 {main}
+REQUEST_URI=/index.php?r=banner/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/view&id=3
+---
+2013/03/24 00:24:04 [error] [exception.CException] exception 'CException' with message 'Property "CDataColumn.label" is not defined.' in /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php:173
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/YiiBase.php(220): CComponent->__set('label', 'Image')
+#1 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(334): CGridView->initColumns()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(147): CGridView->init()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(60): CBaseController->widget('zii.widgets.gri...', Array)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#10 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): CController->render('admin', Array)
+#11 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#15 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#21 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/admin')
+#22 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#23 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#24 {main}
+REQUEST_URI=/index.php?r=banner/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/view&id=3
+---
+2013/03/24 00:29:18 [error] [exception.CException] exception 'CException' with message 'Property "CHttpRequest.host" is not defined.' in /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(53): CComponent->__get('host')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#5 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): CController->render('admin', Array)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#14 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/admin')
+#17 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=banner/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/view&id=3
+---
+2013/03/24 00:29:46 [error] [exception.CException] exception 'CException' with message 'Property "CHttpRequest._hostInfo" is not defined.' in /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(53): CComponent->__get('_hostInfo')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#5 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): CController->render('admin', Array)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#14 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/admin')
+#17 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#18 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/index.php?r=banner/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/view&id=3
+---
+2013/03/24 00:38:22 [error] [php] Use of undefined constant dad - assumed 'dad' (/Users/inkvimac/dev/projects/banners/framework/base/CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(589): CDataColumn->renderDataCell()
+#2 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(545): CGridView->renderTableRow()
+#3 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderTableBody()
+#4 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#7 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(173): CGridView->run()
+#9 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(62): BannerController->widget()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): BannerController->renderInternal()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#14 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): BannerController->render()
+#15 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#18 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#21 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#23 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#24 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#25 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/admin
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php (62)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (162)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:40:35 [error] [php] Use of undefined constant banners - assumed 'banners' (/Users/inkvimac/dev/projects/banners/framework/base/CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(589): CDataColumn->renderDataCell()
+#2 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(545): CGridView->renderTableRow()
+#3 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderTableBody()
+#4 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#7 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(173): CGridView->run()
+#9 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(62): BannerController->widget()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): BannerController->renderInternal()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#14 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): BannerController->render()
+#15 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#18 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#21 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#23 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#24 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#25 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/admin
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php (62)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (162)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:40:38 [error] [php] Use of undefined constant banners - assumed 'banners' (/Users/inkvimac/dev/projects/banners/framework/base/CComponent.php(606) : eval()'d code:1)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridColumn.php(144): CDataColumn->renderDataCellContent()
+#1 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(589): CDataColumn->renderDataCell()
+#2 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(545): CGridView->renderTableRow()
+#3 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(455): CGridView->renderTableBody()
+#4 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#5 unknown(0): CGridView->renderSection()
+#6 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#7 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(173): CGridView->run()
+#9 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(62): BannerController->widget()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): BannerController->renderInternal()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#14 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): BannerController->render()
+#15 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#17 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#18 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#20 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#21 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#22 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#23 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#24 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#25 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#26 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#27 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/admin
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php (62)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (162)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:48:35 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (/Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php:98)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(153): renderAttributes()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(426): tag()
+#2 /Users/inkvimac/dev/projects/banners/protected/models/Banner.php(120): image()
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php(111): Banner->getThumb()
+#4 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(143): Banner->__get()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(2255): Banner->__get()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1980): resolveValue()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1257): activeInputField()
+#8 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CDataColumn.php(97): activeTextField()
+#9 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridColumn.php(109): CDataColumn->renderFilterCellContent()
+#10 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(505): CDataColumn->renderFilterCell()
+#11 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(483): CGridView->renderFilter()
+#12 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(453): CGridView->renderTableHeader()
+#13 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#14 unknown(0): CGridView->renderSection()
+#15 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#16 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#17 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(173): CGridView->run()
+#18 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(64): BannerController->widget()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require()
+#20 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): BannerController->renderInternal()
+#21 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#22 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#23 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): BannerController->render()
+#24 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#25 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#26 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#27 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#28 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#29 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#30 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#31 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#32 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#33 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#34 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#35 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#36 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/admin
+in /Users/inkvimac/dev/projects/banners/protected/models/Banner.php (120)
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php (64)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (162)
+2013/03/24 00:48:37 [error] [php] htmlspecialchars() expects parameter 1 to be string, array given (/Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php:98)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(153): renderAttributes()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(426): tag()
+#2 /Users/inkvimac/dev/projects/banners/protected/models/Banner.php(120): image()
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php(111): Banner->getThumb()
+#4 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(143): Banner->__get()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(2255): Banner->__get()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1980): resolveValue()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/helpers/CHtml.php(1257): activeInputField()
+#8 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CDataColumn.php(97): activeTextField()
+#9 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridColumn.php(109): CDataColumn->renderFilterCellContent()
+#10 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(505): CDataColumn->renderFilterCell()
+#11 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(483): CGridView->renderFilter()
+#12 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/grid/CGridView.php(453): CGridView->renderTableHeader()
+#13 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(160): CGridView->renderItems()
+#14 unknown(0): CGridView->renderSection()
+#15 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(143): preg_replace_callback()
+#16 /Users/inkvimac/dev/projects/banners/framework/zii/widgets/CBaseListView.php(128): CGridView->renderContent()
+#17 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(173): CGridView->run()
+#18 /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php(64): BannerController->widget()
+#19 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require()
+#20 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): BannerController->renderInternal()
+#21 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#22 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#23 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(162): BannerController->render()
+#24 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionAdmin()
+#25 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#26 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#27 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#28 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#29 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#30 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#31 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#32 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#33 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#34 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#35 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#36 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/admin
+in /Users/inkvimac/dev/projects/banners/protected/models/Banner.php (120)
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/admin.php (64)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (162)
+2013/03/24 00:52:32 [warning] [application] Failed to set unsafe attribute "thumb" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 00:53:37 [warning] [application] Failed to set unsafe attribute "thumb" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:18:09 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:18:09 [error] [php] move_uploaded_file(/Users/inkvimac/dev/projects/banners/protected../banners/7299-alex_before.jpg): failed to open stream: No such file or directory (/Users/inkvimac/dev/projects/banners/framework/web/CUploadedFile.php:196)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionCreate()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#12 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/create
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (81)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:19:07 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:19:07 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 19 column title is not unique. The SQL statement executed was: INSERT INTO 'banner' ("weight", "views", "title", "image", "created") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (79)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:19:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 19 column title is not unique. The SQL statement executed was: INSERT INTO 'banner' ("weight", "views", "title", "image", "created") VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in /Users/inkvimac/dev/projects/banners/framework/db/CDbCommand.php:357
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(1023): CDbCommand->execute()
+#1 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(79): CActiveRecord->save()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionCreate()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('create')
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/create')
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=banner/create
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/create
+---
+2013/03/24 12:19:28 [warning] [application] Failed to set unsafe attribute "thumb" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:19:42 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:22:07 [error] [php] rand() expects exactly 2 parameters, 1 given (/Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php:21)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(286): SiteController->runAction()
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in /Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php (21)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 12:22:09 [error] [php] rand() expects exactly 2 parameters, 1 given (/Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php:21)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(286): SiteController->runAction()
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#6 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/index
+in /Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php (21)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:12:08 [warning] [application] Failed to set unsafe attribute "thumb" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:13:33 [warning] [application] Failed to set unsafe attribute "thumb" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:13:37 [warning] [application] Failed to set unsafe attribute "thumb" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (158)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:23:36 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:36:48 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (72)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:37:55 [warning] [application] Failed to set unsafe attribute "image" of "Banner".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (106)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:42:36 [error] [php] Undefined variable: dataProvider (/Users/inkvimac/dev/projects/banners/protected/views/banner/index.php:18)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#2 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(76): BannerController->render()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionIndex()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/index
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/index.php (18)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (76)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:42:38 [error] [php] Undefined variable: dataProvider (/Users/inkvimac/dev/projects/banners/protected/views/banner/index.php:18)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#2 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(76): BannerController->render()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionIndex()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/index
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/index.php (18)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (76)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:45:09 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('list')
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/list')
+#9 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=banner/list
+---
+2013/03/24 14:45:11 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('list')
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/list')
+#9 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=banner/list
+---
+2013/03/24 14:45:28 [error] [php] Undefined variable: model (/Users/inkvimac/dev/projects/banners/protected/views/banner/index.php:8)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#2 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(147): BannerController->render()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionList()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/list
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/index.php (8)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (147)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:45:31 [error] [php] Undefined variable: model (/Users/inkvimac/dev/projects/banners/protected/views/banner/index.php:8)
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): BannerController->renderFile()
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): BannerController->renderPartial()
+#2 /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php(147): BannerController->render()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): BannerController->actionList()
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): BannerController->runAction()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): BannerController->filterAccessControl()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#11 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): BannerController->runActionWithFilters()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): BannerController->run()
+#13 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /Users/inkvimac/dev/projects/banners/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=banner/list
+in /Users/inkvimac/dev/projects/banners/protected/views/banner/index.php (8)
+in /Users/inkvimac/dev/projects/banners/protected/controllers/BannerController.php (147)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:45:45 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "index".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:878
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#1 /Users/inkvimac/dev/projects/banners/protected/controllers/SiteController.php(33): CController->render('index', Array)
+#2 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('index')
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#8 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#9 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/index
+HTTP_REFERER=http://localhost:8081/index.php?r=banner/list
+---
+2013/03/24 14:48:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('index')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/index')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=banner/index
+HTTP_REFERER=http://localhost:8081/index.php?r=site/index
+---
+2013/03/24 14:48:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#9 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=user/index
+---
+2013/03/24 14:48:50 [error] [exception.CException] exception 'CException' with message 'User and its behaviors do not have a method or closure named "search".' in /Users/inkvimac/dev/projects/banners/framework/base/CComponent.php:265
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/db/ar/CActiveRecord.php(225): CComponent->__call('search', Array)
+#1 /Users/inkvimac/dev/projects/banners/protected/views/user/admin.php(45): CActiveRecord->__call('search', Array)
+#2 /Users/inkvimac/dev/projects/banners/protected/views/user/admin.php(45): User->search()
+#3 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(126): require('/Users/inkvimac...')
+#4 /Users/inkvimac/dev/projects/banners/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Users/inkvimac...', Array, true)
+#5 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(869): CBaseController->renderFile('/Users/inkvimac...', Array, true)
+#6 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#7 /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php(143): CController->render('admin', Array)
+#8 /Users/inkvimac/dev/projects/banners/framework/web/actions/CInlineAction.php(49): UserController->actionAdmin()
+#9 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#12 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 /Users/inkvimac/dev/projects/banners/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 /Users/inkvimac/dev/projects/banners/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(291): CFilterChain->run()
+#16 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('admin')
+#18 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('user/admin')
+#19 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#20 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#21 {main}
+REQUEST_URI=/index.php?r=user/admin
+HTTP_REFERER=http://localhost:8081/index.php?r=user/index
+---
+2013/03/24 14:55:37 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php (139)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:55:38 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php (139)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:55:43 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php (139)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:55:45 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php (139)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 14:55:51 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php (139)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 15:04:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('index')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/index')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=banner/index
+HTTP_REFERER=http://localhost:8081/index.php
+---
+2013/03/24 15:04:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('index')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/index')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=banner/index
+HTTP_REFERER=http://localhost:8081/index.php
+---
+2013/03/24 15:10:45 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php (137)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 15:10:49 [warning] [application] Failed to set unsafe attribute "id" of "User".
+in /Users/inkvimac/dev/projects/banners/protected/controllers/UserController.php (137)
+in /Users/inkvimac/dev/projects/banners/index.php (15)
+2013/03/24 15:17:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('index')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/index')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=banner/index
+HTTP_REFERER=http://localhost:8081/index.php?r=site/login
+---
+2013/03/24 15:17:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('index')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/index')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=banner/index
+HTTP_REFERER=http://localhost:8081/index.php?r=site/login
+---
+2013/03/24 15:17:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Users/inkvimac/dev/projects/banners/framework/web/CController.php:483
+Stack trace:
+#0 /Users/inkvimac/dev/projects/banners/framework/web/CController.php(270): CController->missingAction('index')
+#1 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /Users/inkvimac/dev/projects/banners/framework/web/CWebApplication.php(141): CWebApplication->runController('banner/index')
+#3 /Users/inkvimac/dev/projects/banners/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /Users/inkvimac/dev/projects/banners/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=banner/index
+HTTP_REFERER=http://localhost:8081/index.php?r=site/login
+---
